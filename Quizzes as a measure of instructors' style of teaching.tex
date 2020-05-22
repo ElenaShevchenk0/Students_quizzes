@@ -1,0 +1,108 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+ \usepackage{titling}
+ \usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+
+\usepackage{graphicx}
+\graphicspath{ {\string~/Desktop/} }
+
+
+\title{Quizzes as a measure of instructors' style of teaching}
+\author{Elena Shevchenko}
+\date{}
+\setlength{\droptitle}{-5cm}
+
+\begin{document}
+\maketitle
+
+\subsection*{Introduction}
+
+Quizzes is an essential part of students' academic assessment, which can be used to measure growth in knowledge and skills. However, education is interaction between students and instructor and, therefore, success or failure of a student is related to instructor's method of teaching. Some instructors choose conservative approaches while others prefer to use loyal methods of teaching. These method may impact students' ability to understand information and develop skills, where quizzes show quantitative assessment of these processes. Thus, quizzes also can be considered as a measure of instructors' style of teaching. In this paper instructors' style of teaching will be explored based on the results of quizzes.
+
+
+\subsection*{Data}
+
+The data includes 293 average quiz scores for 5 weekly quizzes in Statistics and Probability course and exam results for the same course, which was conducted after the last quiz. Each student was assigned to one instructor (A, B, C or D).  Instructor A was assigned to 69 students, instructor B - 64, instructor C - 90 and instructor D - 70. Additionally, students were divided into groups (1 through 13). Most of the groups contain 23 students, while the others contain 18, 22 or 24 students. Data set also includes extra information that can be used in further analysis and will not be discussed in this paper. Quizzes were graded by each instructors, while exams were graded by other experts where exams were assigned randomly to different graders.
+
+
+\subsection*{EDA}
+
+Descriptive statistics for each variable is presented below. Quiz grades scale is 0-10 with  almost equal mean and median.
+
+\begin{figure}[H]
+
+\includegraphics[center]{{Students_describe}}
+\caption{Descriptive statistics}
+\end{figure}
+
+
+It can be seen from the table below that instructor A has the lowest quiz average , while instructor C has the highest quiz average. Immediate conclusion is that teaching methods of instructor A do not work on the students, while instructor C has more efficient approaches in teaching their students.  However, there may be some other explanations of such results. One is that instructor C is more loyal in grading than instructor A. Another explanation is that it might happened that instructor A had students with lower level of mathematical skills who did not have experience in statistics before, while instructor C had more experienced students in this area. To control for difference between students' abilities to learn the material SAT scores can be considered. However, this data is not available to instructors of this course and, therefore, exam scores could be used to control for the difference in maths skills. 
+
+\begin{figure}[H]
+
+\includegraphics[center]{{instructor_average}}
+\caption{Quiz average by instructor}
+\label{fig:figure2}
+\end{figure}
+
+Figure 3 shows that even though quizzes average was the lowest for instructor A, exams average is not the lowest among instructors. Additionally, instructor C has the highest exam average.
+
+
+
+\begin{figure}[H]
+
+\includegraphics[center]{{exam_average}}
+\caption{Exam average by instructor}
+\end{figure}
+
+
+Boxplots presented below show that exam grades for three instructors A, C and D look similar. Boxplot for instructor B is different from others and the box is located slightly lower than boxes for other instructors. Half of students for all three instructors received grades between 55 and 95, while for instructor B half of students received grades between 50 and 80.  Excluding zero exams, which mean that the student did not take exam, it is clear that the minimum exam grade is the highest for instructor A. 
+
+
+\begin{figure}[H]
+
+\includegraphics[scale=0.9, center]{{boxplot_quiz}}
+\caption{Quiz averages, boxplot}
+\end{figure}
+
+\begin{figure}[H]
+
+\includegraphics[scale=0.9, center]{{boxplot_exam}}
+\caption{Exam grades, boxplot}
+\end{figure}
+
+
+\subsection*{Analysis}
+
+ANCOVA is an appropriate analysis here since the interest is to test whether there is difference between quiz averages among instructors controlling for exams that students received. To use ANCOVA it is necessary that the relationship between covariate (exam grades) and dependent variable (quiz averages) is linear. Both Figure 6 and correlation matrix show that there is linear positive relationship between two variables.
+
+
+\begin{figure}[H]
+
+\includegraphics[center]{{scatterplot}}
+\caption{Scatterplot}
+\end{figure}
+
+
+
+\begin{figure}[H]
+
+\includegraphics[center]{{correlation}}
+\caption{Correlation matrix}
+\end{figure}
+
+
+
+
+
+
+
+
+
+\end{document}
