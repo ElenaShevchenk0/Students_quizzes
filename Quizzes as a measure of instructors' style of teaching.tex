@@ -107,18 +107,40 @@ ANOVA is an appropriate analysis here since the interest is to test whether ther
 \caption{Correlation matrix by instructor}
 \end{figure}
 
-Figure 11 presents the results of ANOVA. The conclusion of ANOVA is that means of all quiz averages are not all equal. Post hoc test TukeyHSD is conducted to determine pairs that are not equal. According to FIgure 12, all pairs of means can be considered equal except pair for instructor B and D.
+Figure 11 presents the results of ANOVA for quiz averages. The conclusion of ANOVA is that means of all quiz averages are not all equal since null hypothesis is rejected due ti small p-value. Post hoc test TukeyHSD is conducted to determine pairs that are not equal. According to Figure 12, all pairs of means cannot be considered equal except for instructor B and D.
 
 
 \begin{figure}[H]
 \includegraphics[center]{{anova}}
-\caption{ANOVA}
+\caption{ANOVA for quiz average}
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[center]{{tukey_quiz}}
-\caption{TukeyHSD post hoc test}
+\caption{TukeyHSD for quiz average}
 \end{figure}
+
+
+ANOVA results for exam grades are presented below.  Null hypothesis is rejected due to small p-value and, therefore, some means can be considered different.  TukeyHSD test shows that almost all means for exam grades can be considered equal except means between instructor B and instructor C,   instructor B and instructor D. Albeit, there is no statistically significant evidence to conclude that means between  instructor B and instructor A are different,  it can be seen that the upper bound of confidence level for means between  instructor B and instructor A is slightly greater than zero, meaning that their means are close to become different. 
+
+
+\begin{figure}[H]
+\includegraphics[center]{{anova_exam}}
+\caption{ANOVA for exam}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[center]{{tukey_exams}}
+\caption{TukeyHSD for exam}
+\end{figure}
+
+
+\subsection*{Conclusion}
+
+Analysis of quiz averages indicates that all means are different except for one pair (instructor B and instructor D) with sample averages 5.22 and 5.79, respectively. In spite of the fact that  instructor A has the lowest quiz average, exam average can be considered the same as for instructors C and D, who have the highest quiz averages. It is likely that instructor A is more conservative and demanding with grading than other instructors, which can impact both students' progress. Additionally, instructor A has the highest correlation coefficient between quiz grades and exams (0.71), which can be considered as the most fair and unprejudiced quiz grading. In this case students may loose points for typos or unclear solution, which stimulates them to learn more and to improve their skills to receive better grades. Instructor B, on the contrary, has higher quiz grades along with the lowest exam average, which is significantly differs from other instructors. One possible explanation is that instructor B is more loyal to students in grading. Instructor B may not mark some minor errors or incomplete solutions, which may lead to students' unawareness of their mistakes. This can affect learning process and cause lower grades on the exam.
+
+
+
 
 
 \end{document}
