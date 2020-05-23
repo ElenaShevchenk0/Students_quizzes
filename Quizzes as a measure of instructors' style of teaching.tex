@@ -36,55 +36,60 @@ The data includes 293 average quiz scores for 5 weekly quizzes in Statistics and
 Descriptive statistics for each variable is presented below. Quiz grades scale is 0-10 with  almost equal mean and median.
 
 \begin{figure}[H]
-
-\includegraphics[center]{{Students_describe}}
+\includegraphics[scale=0.9,center]{{Students_describe}}
 \caption{Descriptive statistics}
 \end{figure}
 
 
-It can be seen from the table below that instructor A has the lowest quiz average , while instructor C has the highest quiz average. Immediate conclusion is that teaching methods of instructor A do not work on the students, while instructor C has more efficient approaches in teaching their students.  However, there may be some other explanations of such results. One is that instructor C is more loyal in grading than instructor A. Another explanation is that it might happened that instructor A had students with lower level of mathematical skills who did not have experience in statistics before, while instructor C had more experienced students in this area. To control for difference between students' abilities to learn the material SAT scores can be considered. However, this data is not available to instructors of this course and, therefore, exam scores could be used to control for the difference in maths skills. 
+It can be seen from the table below that instructor A has the lowest quiz average , while instructor C has the highest quiz average. Immediate conclusion is that teaching methods of instructor A do not work on the students, while instructor C has more efficient approaches in teaching their students.  However, there may be some other explanations of such results. One is that instructor C is more loyal in grading than instructor A. Another explanation is that it might happened that instructor A had students with lower level of mathematical skills who did not have experience in statistics before, while instructor C had more experienced students in this area. To control for difference between students' abilities to learn the material SAT scores can be considered. However, no extra data is available to instructors of this course. Moreover, the number of students assigned to each instructor and randomization of assignment allow to conclude that students should be approximately equally distributed between instructors according to their maths abilities.
 
 \begin{figure}[H]
 
-\includegraphics[center]{{instructor_average}}
+\includegraphics[scale=0.8,center]{{instructor_average}}
 \caption{Quiz average by instructor}
 \label{fig:figure2}
 \end{figure}
 
-Figure 3 shows that even though quizzes average was the lowest for instructor A, exams average is not the lowest among instructors. Additionally, instructor C has the highest exam average.
+Figure 3 shows that even though quizzes average was the lowest for instructor A, exams average is not the lowest among instructors. Additionally, instructor C has the highest exam average. The difference in exam grades for instructors A, C and D is negligible, while instructor B has significantly low exam average.
 
 
 
 \begin{figure}[H]
 
-\includegraphics[center]{{exam_average}}
+\includegraphics[scale=0.8,center]{{exam_average}}
 \caption{Exam average by instructor}
 \end{figure}
 
 
-Boxplots presented below show that exam grades for three instructors A, C and D look similar. Boxplot for instructor B is different from others and the box is located slightly lower than boxes for other instructors. Half of students for all three instructors received grades between 55 and 95, while for instructor B half of students received grades between 50 and 80.  Excluding zero exams, which mean that the student did not take exam, it is clear that the minimum exam grade is the highest for instructor A. 
+Boxplots presented below show that exam grades for three instructors A, C and D look similar. Boxplot for instructor B is different from others and the box is located slightly lower than boxes for other instructors. Half of students for all three instructors received grades between 55 and 95, while for instructor B half of students received grades between 50 and 80.  It is clear that the minimum exam grade is the highest for instructor A. The range for each instructors' grade is presented below two boxplots and shows that instructor A has the lowest range, while  instructor C has the highest range. Standard deviation is also lowest for instructor A, while instructor D has the highest standard deviation.
 
 
 \begin{figure}[H]
-
 \includegraphics[scale=0.9, center]{{boxplot_quiz}}
 \caption{Quiz averages, boxplot}
 \end{figure}
 
 \begin{figure}[H]
-
 \includegraphics[scale=0.9, center]{{boxplot_exam}}
 \caption{Exam grades, boxplot}
 \end{figure}
 
+\begin{figure}[H]
+\includegraphics[scale=0.9, center]{{range}}
+\caption{Range}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[scale=0.9, center]{{std}}
+\caption{Standard deviation}
+\end{figure}
 
 \subsection*{Analysis}
 
-ANCOVA is an appropriate analysis here since the interest is to test whether there is difference between quiz averages among instructors controlling for exams that students received. To use ANCOVA it is necessary that the relationship between covariate (exam grades) and dependent variable (quiz averages) is linear. Both Figure 6 and correlation matrix show that there is linear positive relationship between two variables.
+ANOVA is an appropriate analysis here since the interest is to test whether there is difference between quiz averages among instructors controlling for exams that students received. To use ANOVA it is necessary that the relationship between independent and dependent variables is linear. Both Figure 6 and correlation matrix show that there is linear positive relationship between two variables. Correlation matrix by instructor shows that the highest linear relationship between quiz grades and exam grades is for instructor A, while the lowest correlation coefficient is for instructor B.
 
 
 \begin{figure}[H]
-
 \includegraphics[center]{{scatterplot}}
 \caption{Scatterplot}
 \end{figure}
@@ -92,17 +97,28 @@ ANCOVA is an appropriate analysis here since the interest is to test whether the
 
 
 \begin{figure}[H]
-
 \includegraphics[center]{{correlation}}
 \caption{Correlation matrix}
 \end{figure}
 
 
+\begin{figure}[H]
+\includegraphics[center]{{correlation_instructor}}
+\caption{Correlation matrix by instructor}
+\end{figure}
+
+Figure 11 presents the results of ANOVA. The conclusion of ANOVA is that means of all quiz averages are not all equal. Post hoc test TukeyHSD is conducted to determine pairs that are not equal. According to FIgure 12, all pairs of means can be considered equal except pair for instructor B and D.
 
 
+\begin{figure}[H]
+\includegraphics[center]{{anova}}
+\caption{ANOVA}
+\end{figure}
 
-
-
+\begin{figure}[H]
+\includegraphics[center]{{tukey_quiz}}
+\caption{TukeyHSD post hoc test}
+\end{figure}
 
 
 \end{document}
